@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T16:54:01.592205+00:00",
+  "title": "Design System: brModelo (gobrmodelo)",
+  "extensions": {
+    "colorMeta": {
+      "caneta": {
+        "role": "primary",
+        "displayName": "Advisor's Red Pen",
+        "tonalRamp": [
+          "#3a0507",
+          "#5c0a0e",
+          "#7f0f15",
+          "#b3141d",
+          "#d23a41",
+          "#e47a7e",
+          "#f1b5b7",
+          "#fae3e4"
+        ]
+      },
+      "marca": {
+        "role": "primary",
+        "displayName": "Red-Pen Wash",
+        "tonalRamp": [
+          "#b3141d14",
+          "#b3141d26",
+          "#b3141d38"
+        ],
+        "note": "8% hover/marquee wash; 15% Fyne Pressed; 22% Fyne Selection"
+      },
+      "papel": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "#ffffff"
+        ]
+      },
+      "mesa": {
+        "role": "neutral",
+        "displayName": "Desk Grey",
+        "tonalRamp": [
+          "#1f2124",
+          "#3a3c40",
+          "#5a5d62",
+          "#7d8086",
+          "#a2a5aa",
+          "#c3c5c9",
+          "#d4d6d9",
+          "#eceef0"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "#171717",
+          "#2b2b2b",
+          "#404040",
+          "#555555",
+          "#777777",
+          "#9a9a9a",
+          "#c4c4c4",
+          "#ececec"
+        ]
+      },
+      "grafite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "tonalRamp": [
+          "#171717",
+          "#2b2b2b",
+          "#404040",
+          "#555555",
+          "#777777",
+          "#9a9a9a",
+          "#c4c4c4",
+          "#ececec"
+        ]
+      },
+      "filete": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "tonalRamp": [
+          "#17171726",
+          "#17171733",
+          "#1717178c"
+        ],
+        "note": "15% scrollbar; 20% row hairline/separator; 55% Fyne input border"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Cover title BRMODELO, centered, once per window."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Primary SUMÁRIO entries in caps, SUMÁRIO heading, Ficha heading."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Secondary SUMÁRIO entries, shortcuts, field values. Italic cut for remarks: cover subtitle, Ficha notes, empty-state guidance, red-pen notes."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "'Figura N –' (bold) + title (regular) above each figure."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Ficha field labels and the cover year, in graphite."
+      },
+      "source": {
+        "displayName": "Source",
+        "purpose": "'Fonte: ...' line 30px below the figure, graphite."
+      },
+      "figure-label": {
+        "displayName": "Figure Label",
+        "purpose": "Attribute names inside figures."
+      },
+      "figure-name": {
+        "displayName": "Figure Name",
+        "purpose": "Entity/relationship names; table names at 13px; PK/FK markers."
+      },
+      "figure-small": {
+        "displayName": "Figure Small",
+        "purpose": "Cardinalities; bold graphite table column heads."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet-on-desk",
+        "value": "0 1px 0 0.5px rgba(0,0,0,0.086), 0 3px 0 1.5px rgba(0,0,0,0.063), 0 6px 0 3px rgba(0,0,0,0.047)",
+        "purpose": "Three stacked widening rects under every sheet; the only shadow in the system."
+      },
+      {
+        "name": "overlay",
+        "value": "0 2px 8px rgba(0,0,0,0.18)",
+        "purpose": "Fyne popup fallback."
+      }
+    ],
+    "strokes": [
+      {
+        "name": "shape",
+        "value": "1.25px ink",
+        "purpose": "ER shapes and links at rest."
+      },
+      {
+        "name": "shape-selected",
+        "value": "2px caneta",
+        "purpose": "Selected/grouped/linking shapes and links."
+      },
+      {
+        "name": "rule-heavy",
+        "value": "1.75px ink",
+        "purpose": "Open/close Ficha and logical tables."
+      },
+      {
+        "name": "rule-field",
+        "value": "1px ink",
+        "purpose": "Under an input row on the Ficha."
+      },
+      {
+        "name": "rule-hair",
+        "value": "0.75px filete (ink under table heads)",
+        "purpose": "Row separators."
+      },
+      {
+        "name": "pen-loop",
+        "value": "1.5px caneta, radius = height/2",
+        "purpose": "Red-pen circle around a shape with a note."
+      }
+    ],
+    "motion": [
+      {
+        "name": "note-fade",
+        "value": "transient notes clear after a few seconds",
+        "purpose": "Passing red-pen remarks."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "window",
+        "value": "1200x760 default; left sheet fixed 300px, figure sheet fluid"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "SUMÁRIO entry",
+      "kind": "nav",
+      "refersTo": "sumario-entry",
+      "description": "Table-of-contents line that is the tool picker and command list; shortcut in the page-number column.",
+      "html": "<div class=\"ds-toc\"><a class=\"ds-toc-item ds-primary ds-active\" href=\"#\"><span class=\"ds-n\">1</span><span class=\"ds-l\">SELECIONAR</span><span class=\"ds-dots\"></span><span class=\"ds-k\">V</span></a><a class=\"ds-toc-item ds-primary\" href=\"#\"><span class=\"ds-n\">2</span><span class=\"ds-l\">ENTIDADE</span><span class=\"ds-dots\"></span><span class=\"ds-k\">E</span></a><a class=\"ds-toc-item\" href=\"#\"><span class=\"ds-n\">6.1</span><span class=\"ds-l\">Abrir</span><span class=\"ds-dots\"></span><span class=\"ds-k\">Ctrl+O</span></a></div>",
+      "css": ".ds-toc{width:256px;background:#fff;font-family:'Liberation Serif','Times New Roman',serif;font-size:15px}.ds-toc-item{position:relative;display:flex;align-items:baseline;height:30px;line-height:30px;color:#171717;text-decoration:none;padding-right:6px}.ds-n{width:28px;padding-left:16px}.ds-l{white-space:nowrap}.ds-primary .ds-n,.ds-primary .ds-l{font-weight:700}.ds-dots{flex:1;margin:0 8px 0 6px;overflow:hidden;color:#555}.ds-dots::after{content:' . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .';white-space:nowrap}.ds-k{color:#555}.ds-toc-item:hover,.ds-toc-item:focus-visible{background:#b3141d14;outline:none}.ds-toc-item:hover .ds-l,.ds-toc-item:focus-visible .ds-l{color:#b3141d}.ds-active .ds-n{color:#b3141d}.ds-active::before{content:'';position:absolute;left:2px;top:14px;width:10px;height:2px;background:#b3141d}"
+    },
+    {
+      "name": "Ficha",
+      "kind": "card",
+      "refersTo": "ficha-field",
+      "description": "Properties card ruled like a library catalog card; borderless fields underlined in ink.",
+      "html": "<div class=\"ds-ficha\"><div class=\"ds-ficha-h\">Ficha – Entidade nº 2</div><label class=\"ds-campo\"><span>Nome</span><input value=\"Entidade\"></label><div class=\"ds-nota\">Arraste qualquer um deles<br>para mover o conjunto.</div></div>",
+      "css": ".ds-ficha{width:296px;background:#fff;font-family:'Liberation Serif','Times New Roman',serif;font-size:15px;color:#171717;border-top:1.75px solid #171717;border-bottom:1.75px solid #171717;padding-bottom:6px}.ds-ficha>*{padding:6px 0}.ds-ficha-h{font-weight:700;border-bottom:0.75px solid #17171733}.ds-campo{display:flex;align-items:center;border-bottom:1px solid #171717}.ds-campo span{width:56px;font-size:13px;color:#555}.ds-campo input{flex:1;border:0;border-radius:0;background:#fff;font:inherit;color:#171717;padding:4px 0}.ds-campo input:focus-visible{outline:none;caret-color:#b3141d}.ds-campo:focus-within span{color:#b3141d}.ds-nota{font-style:italic}"
+    },
+    {
+      "name": "Figure caption",
+      "kind": "custom",
+      "refersTo": "caption",
+      "description": "ABNT caption above and Fonte line below a figure.",
+      "html": "<figure class=\"ds-fig\"><figcaption><b>Figura 1 –</b> Modelo conceitual</figcaption><div class=\"ds-fig-body\"><div class=\"ds-ent\">Entidade</div><div class=\"ds-ent ds-sel\">Pedido</div></div><p class=\"ds-fonte\">Fonte: elaborado pelo autor (2026).</p></figure>",
+      "css": ".ds-fig{margin:0;padding:24px;background:#fff;font-family:'Liberation Serif','Times New Roman',serif;color:#171717}.ds-fig figcaption{font-size:13px}.ds-fig-body{display:flex;gap:48px;margin:20px 0 18px}.ds-ent{width:120px;height:60px;display:grid;place-items:center;border:1.25px solid #171717;font:700 12px 'Liberation Sans',Arial,sans-serif;cursor:pointer}.ds-ent:hover{border-color:#b3141d;color:#b3141d}.ds-sel{border:2px solid #b3141d;color:#b3141d}.ds-fonte{margin:0;font-size:11px;color:#555}"
+    },
+    {
+      "name": "Logical table",
+      "kind": "custom",
+      "refersTo": "figure-small",
+      "description": "IBGE-style table: name above, heavy top and bottom rules, hairline under heads, no verticals; FK in red.",
+      "html": "<div class=\"ds-tab\"><div class=\"ds-tab-n\">Pedido</div><table><thead><tr><th>Campo</th><th>Tipo</th><th>Chave</th></tr></thead><tbody><tr><td>id</td><td class=\"ds-t\">INTEGER</td><td class=\"ds-pk\">PK</td></tr><tr><td>fk_Cliente_id</td><td class=\"ds-t\">INTEGER</td><td class=\"ds-fk\">FK</td></tr></tbody></table></div>",
+      "css": ".ds-tab{display:inline-block;background:#fff;font-family:'Liberation Sans',Arial,sans-serif;color:#171717}.ds-tab-n{font-weight:700;font-size:13px;margin-bottom:4px}.ds-tab table{border-collapse:collapse;border-top:1.75px solid #171717;border-bottom:1.75px solid #171717}.ds-tab th{font-size:11px;font-weight:700;color:#555;text-align:left;padding:4px 10px;border-bottom:0.75px solid #171717}.ds-tab td{font-size:12px;padding:3px 10px;height:16px}.ds-t{color:#555}.ds-pk{font-weight:700}.ds-fk{font-weight:700;color:#b3141d}.ds-tab tr:hover td{background:#b3141d14}"
+    },
+    {
+      "name": "Red-pen margin note",
+      "kind": "custom",
+      "refersTo": "margin-note",
+      "description": "Error/prompt as an advisor's loop around the shape plus an italic red remark; never a dialog.",
+      "html": "<div class=\"ds-note\"><span class=\"ds-loop\"><span class=\"ds-ent2\">Entidade</span></span><em>ligar a quê? clique no destino</em></div>",
+      "css": ".ds-note{display:flex;align-items:flex-start;gap:16px;padding:16px;background:#fff}.ds-loop{padding:7px;border:1.5px solid #b3141d;border-radius:999px}.ds-ent2{display:grid;place-items:center;width:120px;height:60px;border:1.25px solid #171717;font:700 12px 'Liberation Sans',Arial,sans-serif;color:#171717}.ds-note em{font:italic 15px 'Liberation Serif','Times New Roman',serif;color:#b3141d;max-width:32ch}"
+    },
+    {
+      "name": "Sheet on desk",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "White square sheet with a soft layered shadow on the grey desk.",
+      "html": "<div class=\"ds-desk\"><div class=\"ds-sheet\"><b>SUMÁRIO</b></div></div>",
+      "css": ".ds-desk{background:#d4d6d9;padding:22px 18px}.ds-sheet{width:256px;height:140px;padding:22px;background:#fff;border-radius:0;box-shadow:0 1px 0 0.5px rgba(0,0,0,.086),0 3px 0 1.5px rgba(0,0,0,.063),0 6px 0 3px rgba(0,0,0,.047);font:700 15px 'Liberation Serif','Times New Roman',serif;color:#171717;text-align:center}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Corrected Monograph",
+    "overview": "**Creative North Star: \"The Corrected Monograph\"**\n\nThe editor is a page of a Brazilian TCC set to ABNT: white A4 sheets lying on a cool grey desk, black ink, a Times-metric serif for everything the document says and an Arial-metric sans for everything inside a figure. There is no toolbar and no inspector. Tools and commands are a SUMÁRIO with dot leaders whose page-number column holds the keyboard shortcut. Properties are a ruled catalog card, the Ficha. The diagram is a numbered figure with its caption above and its Fonte line below. Errors are what an advisor would write: a red-pen loop around the shape and an italic remark in the margin.\n\nThe only voice that is not ink is the advisor's red pen. It marks where you are (active SUMÁRIO number and tick), what the pointer is over, what is selected, the foreign keys the conversion added, and everything that went wrong. Density is a printed page: generous margins, a 30px line rhythm in the SUMÁRIO, hairline rules instead of boxes.\n\nThe world is light only, because it is paper. It rejects the category-default diagram editor (icon toolbar and grey inspector panels) and the dark neon developer tool.",
+    "keyCharacteristics": [
+      "Two sheets on a desk: a 300px SUMÁRIO sheet and a wide figure sheet, each with a soft layered shadow.",
+      "Serif for the document, sans for the figure; never swapped.",
+      "One accent, the red pen, used as correction and state, never as decoration.",
+      "Rules, not boxes: heavy ink rules open and close cards and tables, hairlines separate rows.",
+      "Square corners on every surface and field."
+    ],
+    "rules": [
+      {
+        "name": "The Red Pen Rule",
+        "body": "Red means the advisor touched it: state (active, hover, selected) or correction (errors, notes, FKs the converter added). Nothing is red for decoration, and no second accent exists.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper Is Light Rule",
+        "body": "There is no dark variant. The theme forces the light Fyne variant for every fallback color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Faces Rule",
+        "body": "Serif speaks for the document (SUMÁRIO, Ficha, captions, notes); sans lives only inside a figure. A figure label in serif or a SUMÁRIO line in sans breaks the world.",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight Is Level Rule",
+        "body": "Bold means hierarchy level (primary section, figure number, entity name, PK), never state. Active and hover change color, never weight.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Page Rule",
+        "body": "Only sheets have shadows. Cards, tables, fields and shapes are drawn on the paper, not stacked above it.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** put every new command into the SUMÁRIO as a numbered entry with its shortcut in the page-number column.",
+      "**Do** keep serif for document text and sans only inside figures.",
+      "**Do** use the red pen (caneta) only for state and correction: active, hover, selected, error, FK, note.",
+      "**Do** draw structure with ink rules (1.75px heavy, 0.75px hairline) instead of boxes.",
+      "**Do** give every figure an ABNT caption above and a Fonte line below that follow its bounding box.",
+      "**Do** report errors as red italic notes on the Ficha or in the figure margin."
+    ],
+    "donts": [
+      "**Don't** add an icon toolbar, grey inspector panel, or modal dialogs for errors.",
+      "**Don't** add a dark theme or a second accent color.",
+      "**Don't** change weight to show state; bold is section level.",
+      "**Don't** round the corners of sheets, fields, cards or tables; the pen loop and attribute circles are marks, not containers.",
+      "**Don't** put shadows on anything that is not a sheet."
+    ]
+  }
+}
