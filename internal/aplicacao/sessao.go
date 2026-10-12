@@ -151,23 +151,15 @@ func (s *Sessao) CriarEntidade(nome string, p *dom.Ponto) *dom.Forma {
 }
 
 // AdicionarAtributo creates an attribute attached to dono, on the side nearest
-// perto; without perto, attributes alternate right and left of the owner.
+// perto. Without perto they stack below the owner's bottom-right corner: there
+// the label sits outside, and relationship lines (which leave from the middle
+// of a side) never cross it.
 func (s *Sessao) AdicionarAtributo(dono *dom.Forma, nome, tipo string, chave bool, perto *dom.Ponto) (*dom.Forma, error) {
 	if dono.Tipo == dom.Atributo {
 		return nil, fmt.Errorf("um atributo não pode ter atributos; escolha uma entidade ou um relacionamento")
 	}
 	if perto == nil {
-		n := 0
-		for _, l := range s.D.Ligacoes {
-			if l.B == dono.ID && s.D.Forma(l.A).Tipo == dom.Atributo {
-				n++
-			}
-		}
-		p := dom.Ponto{X: dono.X + dono.W - 1, Y: dono.Y + dono.H/2}
-		if n%2 == 1 {
-			p.X = dono.X + 1
-		}
-		perto = &p
+		perto = &dom.Ponto{X: dono.X + dono.W - 12, Y: dono.Y + dono.H - 1}
 	}
 	a := s.CriarForma(dom.Atributo, *perto, nome)
 	a.TipoAtributo, a.Identificador = tipo, chave
